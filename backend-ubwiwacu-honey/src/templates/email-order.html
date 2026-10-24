@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order {{order_number}}</title>
+</head>
+<body style="margin:0;padding:0;background:#fdf8ef;font-family:Arial,Helvetica,sans-serif;color:#3b2a14">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#fdf8ef;padding:24px 0">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden">
+          <tr>
+            <td style="background:#b7791f;color:#ffffff;padding:20px 24px">
+              <h1 style="margin:0;font-size:22px">{{business_name}}</h1>
+              <p style="margin:4px 0 0;font-size:13px">{{business_parent}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px">
+              <p>Hello {{customer_name}},</p>
+              <p>Thank you for your order. We have received it and it is <strong>awaiting payment</strong>.</p>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" style="margin:16px 0;font-size:14px">
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Order number</td><td><strong>{{order_number}}</strong></td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Date</td><td>{{order_date}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Fulfilment</td><td>{{fulfilment_type}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Payment method</td><td>{{payment_method}}</td></tr>
+              </table>
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:14px;border-collapse:collapse">
+                <thead>
+                  <tr style="background:#fdf1dc">
+                    <th align="left" style="padding:6px 8px">Product</th>
+                    <th align="left" style="padding:6px 8px">Size</th>
+                    <th align="center" style="padding:6px 8px">Qty</th>
+                    <th align="right" style="padding:6px 8px">Unit price</th>
+                    <th align="right" style="padding:6px 8px">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{{item_rows}}}
+                </tbody>
+              </table>
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:14px;margin-top:12px">
+                <tr><td align="right" style="padding:2px 8px">Subtotal</td><td align="right" width="140">{{subtotal}}</td></tr>
+                <tr><td align="right" style="padding:2px 8px">Discount</td><td align="right">{{discount}}</td></tr>
+                <tr><td align="right" style="padding:2px 8px"><strong>Total</strong></td><td align="right"><strong>{{total}}</strong></td></tr>
+              </table>
+
+              <h3 style="margin:24px 0 8px;font-size:16px">How to pay</h3>
+              {{{payment_instructions}}}
+              <p>After paying, submit your transaction reference on the order tracking page using your order number. Your order is confirmed only after our team verifies the payment.</p>
+              <p style="background:#fff4e5;border-left:4px solid #b7791f;padding:10px 12px;font-size:13px">{{payment_safety_notice}}</p>
+
+              <h3 style="margin:24px 0 8px;font-size:16px">Delivery</h3>
+              <p style="font-size:13px">{{delivery_notice}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background:#3b2a14;color:#f5e6c8;padding:16px 24px;font-size:12px">
+              {{business_name}} · {{business_phone}} · WhatsApp {{business_whatsapp}} · {{business_email}}<br>
+              &copy; {{year}} {{business_name}}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
