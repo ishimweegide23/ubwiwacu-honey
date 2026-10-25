@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receipt {{receipt_number}}</title>
+</head>
+<body style="margin:0;padding:0;background:#fdf8ef;font-family:Arial,Helvetica,sans-serif;color:#3b2a14">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#fdf8ef;padding:24px 0">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden">
+          <tr>
+            <td style="background:#b7791f;color:#ffffff;padding:20px 24px">
+              <h1 style="margin:0;font-size:22px">{{business_name}}</h1>
+              <p style="margin:4px 0 0;font-size:13px">Payment received</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px">
+              <p>Hello {{customer_name}},</p>
+              <p>We have verified your payment. Thank you! Your receipt is attached as a PDF.</p>
+
+              <table role="presentation" cellspacing="0" cellpadding="0" style="margin:16px 0;font-size:14px">
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Receipt number</td><td><strong>{{receipt_number}}</strong></td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Order number</td><td>{{order_number}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Date</td><td>{{issued_at}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Payment method</td><td>{{payment_method}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Transaction ref</td><td>{{transaction_ref}}</td></tr>
+                <tr><td style="padding:2px 12px 2px 0;color:#7a6650">Total paid</td><td><strong>{{total_paid}}</strong></td></tr>
+              </table>
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:14px;border-collapse:collapse">
+                <thead>
+                  <tr style="background:#fdf1dc">
+                    <th align="left" style="padding:6px 8px">Product</th>
+                    <th align="left" style="padding:6px 8px">Size</th>
+                    <th align="center" style="padding:6px 8px">Qty</th>
+                    <th align="right" style="padding:6px 8px">Unit price</th>
+                    <th align="right" style="padding:6px 8px">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{{item_rows}}}
+                </tbody>
+              </table>
+
+              <p style="font-size:13px;margin-top:20px">{{delivery_notice}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background:#3b2a14;color:#f5e6c8;padding:16px 24px;font-size:12px">
+              {{business_name}} · {{business_phone}} · WhatsApp {{business_whatsapp}} · {{business_email}}<br>
+              &copy; {{year}} {{business_name}}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
